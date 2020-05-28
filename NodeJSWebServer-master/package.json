@@ -1,9 +1,0 @@
-{
-  "name": "proxy",
-  "description": "A Simple HTTP Proxy",
-  "version": "0.0.1",
-  "devDependencies": {},
-  "dependencies": {
-    "request": "^2.81.0"
-  }
-}
