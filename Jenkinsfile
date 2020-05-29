@@ -1,4 +1,4 @@
-node ('build-docker01')  {
+node {
    
     def app
 
