@@ -1,6 +1,6 @@
 node {
-    def app
-
+    def appsimpleserver
+    def appsimpleproxy
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -10,9 +10,9 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        sh 'whoami'
-        app = docker.build("amartyamandal/simpleserver:${env.BUILD_ID}","-f NodeJSWebServer-master/Dockerfile NodeJSWebServer-master/.")
         
+        appsimpleserver = docker.build("amartyamandal/simpleserver:${env.BUILD_ID}","-f NodeJSWebServer-master/Dockerfile NodeJSWebServer-master/.")
+        appsimpleproxy = docker.build("amartyamandal/simpleproxy:${env.BUILD_ID}","-f NodejsProxy-master/Dockerfile NodejsProxy-master/.")
        
     }
 
@@ -31,8 +31,11 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'mydockerhub') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            appsimpleserver.push("${env.BUILD_NUMBER}")
+            appsimpleserver.push("latest")
+            
+            appsimpleproxy.push("${env.BUILD_NUMBER}")
+            appsimpleproxy.push("latest")
         }
     }
 }
