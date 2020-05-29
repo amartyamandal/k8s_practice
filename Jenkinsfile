@@ -12,7 +12,7 @@ node {
 
         /*checkout scm*/
         echo "Clone Repo"
-        git 'https://github.com/amartyamandal/k8s_practice.git'
+        /*git 'https://github.com/amartyamandal/k8s_practice.git'*/
         /*docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"*/
 
     }
