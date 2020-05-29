@@ -41,6 +41,6 @@ node {
     }
     stage('Clean Docker Images') {
         
-        sh 'docker system prune -a'
+        sh 'yes | docker system prune -a'
     }
 }
