@@ -4,14 +4,14 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout scm
+        /*checkout scm*/
     }
 
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("amartyamandal/simpleserver")
+        app = docker.run("hello-world")
     }
 
     stage('Test image') {
