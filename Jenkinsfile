@@ -4,6 +4,7 @@ node {
 
     stage('Clone repository') {
            echo "Clone Repo"
+           echo "$HOME"
     }
 
     stage('Build image') {
