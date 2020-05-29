@@ -5,7 +5,7 @@ node {
 
     stage('Clone repository') {
            echo "Clone Repo"
-           echo "apt update"
+           sh 'apt update'
     }
 
     stage('Build image') {
