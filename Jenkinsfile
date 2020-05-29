@@ -1,6 +1,6 @@
-pipeline {
+node ('build-docker01')  {
    
-   
+    def app
 
     stage('Clone repository') {
            echo "Clone Repo"
