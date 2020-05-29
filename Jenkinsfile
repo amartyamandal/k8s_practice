@@ -1,10 +1,10 @@
 pipeline {
-    def app
-
+   
    
 
     stage('Clone repository') {
            echo "Clone Repo"
+           sh "$HOME"
            sh 'mkdir test'
     }
 
