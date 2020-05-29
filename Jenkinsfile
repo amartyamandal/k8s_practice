@@ -20,8 +20,7 @@ node {
           ]) {
             print 'username=' + username + 'password=' + password
 
-            print 'username.collect { it }=' + username.collect { it }
-            print 'password.collect { it }=' + password.collect { it }
+            sh 'docker login -u='+ username + ' -p=' + password
           }
         }
      
