@@ -36,8 +36,7 @@ node {
             
             appsimpleproxy.push("${env.BUILD_NUMBER}")
             appsimpleproxy.push("latest")
-            
-            docker system prune -a
+                        
         }
     }
     stage('Clean Docker Images') {
