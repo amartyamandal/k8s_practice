@@ -11,7 +11,7 @@ node {
     }
 
     stage('usernamePassword') {
-      steps {
+      
         script {
           withCredentials([
             usernamePassword(credentialsId: 'mydockerhub',
@@ -24,7 +24,7 @@ node {
             print 'password.collect { it }=' + password.collect { it }
           }
         }
-      }
+     
     }
    
     stage('Build image') {
