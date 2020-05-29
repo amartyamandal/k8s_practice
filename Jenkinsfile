@@ -15,7 +15,7 @@ node {
    stage('Building image') {
       
         echo "Building Image"
-        docker run hello-world
+        sh 'docker run hello-world'
      
     }
     
