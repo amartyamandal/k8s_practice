@@ -7,7 +7,7 @@ node {
            echo "$HOME"
            sh 'pwd'
            sh 'whoami'
-           sh 'docker'
+          
     }
 
     stage('usernamePassword') {
