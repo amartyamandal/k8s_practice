@@ -5,7 +5,7 @@ node {
 
     stage('Clone repository') {
            echo "Clone Repo"
-           echo "echo $PATH"
+           echo "pwd"
     }
 
     stage('Build image') {
