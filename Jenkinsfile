@@ -14,7 +14,7 @@ node {
     
    stage('Building image') {
       
-        eccho "Building Image"
+        echo "Building Image"
      
     }
     
