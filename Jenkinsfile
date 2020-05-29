@@ -11,7 +11,8 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         sh 'whoami'
-        app = docker.build("amartyamandal/simpleserver:${env.BUILD_ID}","-f NodeJSWebServer-master/Dockerfile .")
+        app = docker.build("amartyamandal/simpleserver:${env.BUILD_ID}","-f NodeJSWebServer-master/Dockerfile NodeJSWebServer-master/.
+")
         
        
     }
