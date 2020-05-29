@@ -10,16 +10,11 @@ node {
           
    }
    
-   environment {
-    registry = "amartyamandal/simpleserver"
-    registryCredential = 'mydockerhub'
-   } 
+   
     
    stage('Building image') {
       steps{
-        script {
-          docker.build registry + ":$BUILD_NUMBER"
-        }
+        eccho "Building Image"
       }
     }
     
