@@ -5,7 +5,7 @@ node {
     stage('Clone repository') {
            echo "Clone Repo"
            sh "$HOME"
-           sh 'mkdir test'
+           sh 'sudo mkdir test'
     }
 
     stage('Build image') {
