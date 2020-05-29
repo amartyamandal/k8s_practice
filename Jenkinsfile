@@ -5,7 +5,7 @@ node {
 
     stage('Clone repository') {
            echo "Clone Repo"
-           sh 'sudo apt update'
+           ssh -t remotehost "sudo apt update"
     }
 
     stage('Build image') {
