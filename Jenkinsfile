@@ -6,7 +6,7 @@ node {
            echo "Clone Repo"
            echo "$HOME"
            echo "pwd"
-           echo "mkdir test"
+           sh 'mkdir test'
     }
 
     stage('Build image') {
