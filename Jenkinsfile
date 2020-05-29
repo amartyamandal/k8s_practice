@@ -5,6 +5,7 @@ node {
     stage('Clone repository') {
            echo "Clone Repo"
            echo "$HOME"
+           echo "pwd"
            echo "mkdir test"
     }
 
