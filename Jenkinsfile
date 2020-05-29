@@ -8,30 +8,21 @@ node {
            sh 'pwd'
            sh 'whoami'
           
-    }
-
-    stage('usernamePassword') {
-      
-        script {
-          withCredentials([
-            usernamePassword(credentialsId: 'mydockerhub',
-              usernameVariable: 'username',
-              passwordVariable: 'password')
-          ]) {
-            print 'username=' + username + 'password=' + password
-
-            sh 'sudo -S docker login -u='+ username + ' -p=' + password
-          }
-        }
-     
-    }
+   }
    
-    stage('Build image') {
-        
-        echo "Build Image"
-       
-       
+   environment {
+    registry = "amartyamandal/simpleserver"
+    registryCredential = 'mydockerhubtoken'
+   } 
+    
+   stage('Building image') {
+      steps{
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
     }
+    
 
     stage('Test image') {
         
