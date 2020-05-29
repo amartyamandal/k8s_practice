@@ -12,7 +12,7 @@ node {
    
    environment {
     registry = "amartyamandal/simpleserver"
-    registryCredential = 'mydockerhubtoken'
+    registryCredential = 'mydockerhub'
    } 
     
    stage('Building image') {
