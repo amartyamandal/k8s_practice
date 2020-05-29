@@ -13,9 +13,9 @@ node {
    
     
    stage('Building image') {
-      steps{
+      
         eccho "Building Image"
-      }
+     
     }
     
 
