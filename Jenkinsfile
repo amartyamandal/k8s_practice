@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+        sh 'cd /NodeJSWebServer-master'
         app = docker.build("amartyamandal/simpleserver")
     }
 
