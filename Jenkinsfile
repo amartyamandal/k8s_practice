@@ -5,7 +5,8 @@ node {
     stage('Clone repository') {
            echo "Clone Repo"
            echo "$HOME"
-           echo "pwd"
+           sh 'pwd'
+           sh 'whoami'
            sh 'mkdir test'
     }
 
