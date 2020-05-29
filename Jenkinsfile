@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.run("hello-world")
+        app = docker.build("amartyamandal/simpleserver")
     }
 
     stage('Test image') {
