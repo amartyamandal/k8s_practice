@@ -20,7 +20,7 @@ node {
           ]) {
             print 'username=' + username + 'password=' + password
 
-            sh 'docker login -u='+ username + ' -p=' + password
+            sh 'sudo docker login -u='+ username + ' -p=' + password
           }
         }
      
