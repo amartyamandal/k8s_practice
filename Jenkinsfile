@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        sh 'whoami'
+        /*sh 'whoami'*/
         appsimpleserver = docker.build("amartyamandal/simpleserver:${env.BUILD_ID}","-f NodeJSWebServer-master/Dockerfile NodeJSWebServer-master/.")
         appsimpleproxy = docker.build("amartyamandal/simpleproxy:${env.BUILD_ID}","-f NodejsProxy-master/Dockerfile NodejsProxy-master/.")
        
