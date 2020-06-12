@@ -168,5 +168,3 @@ spec:
   selector:
     app: webserver
     version: v2
-
-
