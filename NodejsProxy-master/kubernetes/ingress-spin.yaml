@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: hello-kubernetes-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: app1.vindpro.dev
+    http:
+      paths:
+      - backend:
+          serviceName: hello-kubernetes-first
+          servicePort: 80
+  - host: spinnaker.vindpro.dev
+    http:
+      paths:
+      - backend:
+          serviceName: spinnaker9000
+          servicePort: 9000
+  - host: spinnaker-api.vindpro.dev
+    http:
+      paths:
+      - backend:
+          serviceName: spinnaker8084
+          servicePort: 8084
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: spinnaker9000
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: spin-deck.spinnaker.svc.cluster.local
+  ports:
+  - port: 9000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: spinnaker8084
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: spin-gate.spinnaker.svc.cluster.local
+  ports:
+  - port: 8084
