@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: 'index.docker.io/nginx:latest'
         ports:
         - containerPort: 80
