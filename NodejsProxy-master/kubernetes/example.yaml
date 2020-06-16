@@ -17,7 +17,11 @@ spec:
         - env:
             - name: PROXYURL
               value: http://webserver:81
+<<<<<<< HEAD
           image: amartyamandal/simpleproxy
+=======
+          image: index.docker.io/amartyamandal/simpleproxy
+>>>>>>> 3ed4fc243d2100e3e985893e8dde3462ab6598fe
           imagePullPolicy: IfNotPresent
           name: proxy
           ports:
@@ -58,7 +62,11 @@ spec:
         - env:
             - name: SERVERCONTNET
               value: WebServer V1
+<<<<<<< HEAD
           image: amartyamandal/simpleserver
+=======
+          image: index.docker.io/amartyamandal/simpleserver
+>>>>>>> 3ed4fc243d2100e3e985893e8dde3462ab6598fe
           imagePullPolicy: IfNotPresent
           name: simpleserver
           ports:
@@ -99,7 +107,11 @@ spec:
         - env:
             - name: SERVERCONTNET
               value: WebServer V2
+<<<<<<< HEAD
           image: amartyamandal/simpleserver
+=======
+          image: index.docker.io/amartyamandal/simpleserver
+>>>>>>> 3ed4fc243d2100e3e985893e8dde3462ab6598fe
           imagePullPolicy: IfNotPresent
           name: simpleserver
           ports:
