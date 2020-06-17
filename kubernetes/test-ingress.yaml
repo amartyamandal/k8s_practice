@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: app1.vindpro.dev
+  - host: 104.248.105.196
     http:
       paths:
       - backend:
