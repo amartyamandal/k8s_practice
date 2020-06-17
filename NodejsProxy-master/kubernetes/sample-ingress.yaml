@@ -29,6 +29,6 @@ metadata:
   namespace: ingress-nginx
 spec:
   type: ExternalName
-  externalName: hello-kubernetes-first.default.svc.cluster.local
+  externalName: hello-kubernetes-first.appsample1.svc.cluster.local
   ports:
   - port: 80
