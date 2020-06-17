@@ -1,0 +1,34 @@
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  namespace: ingress-nginx
+  name: hello-kubernetes-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-port: "80"
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-protocol: "http"
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-path: "/health"
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-check-interval-seconds: "3"
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-response-timeout-seconds: "5"
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-unhealthy-threshold: "3"
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-healthy-threshold: "5"
+spec:
+  rules:
+  - host: app1.vindpro.dev
+    http:
+      paths:
+      - backend:
+          serviceName: hello-k8s-01
+          servicePort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-k8s-01
+  namespace: ingress-nginx
+spec:
+  type: ExternalName
+  externalName: hello-kubernetes-first.appsample1.svc.cluster.local
+  ports:
+  - port: 80
