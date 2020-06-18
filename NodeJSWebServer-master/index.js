@@ -1,7 +1,7 @@
 const http = require('http');
 var url = require("url");
 const os = require('os');
-const port = 3031;
+const port = 3030;
 const content = process.env.SERVERCONTNET || "Hello world";
 
 const requestHandler = (request, response) => {
