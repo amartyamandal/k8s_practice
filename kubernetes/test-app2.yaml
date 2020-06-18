@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-kubernetes-first
+  name: hello-kubernetes-second
 spec:
   type: ClusterIP
   ports:
