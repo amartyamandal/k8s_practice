@@ -16,7 +16,7 @@ spec:
       containers:
         - env:
             - name: PROXYURL
-              value: http://webserver:81
+              value: http://webserver
           image: amartyamandal/simpleproxy
           imagePullPolicy: IfNotPresent
           name: proxy
@@ -119,7 +119,7 @@ metadata:
 spec:
   ports:
     - name: web
-      port: 82
+      port: 80
       protocol: TCP
       targetPort: 3030
   selector:
@@ -133,7 +133,7 @@ metadata:
 spec:
   ports:
     - name: http-web
-      port: 81
+      port: 80
       protocol: TCP
       targetPort: 3030
   selector:
@@ -147,7 +147,7 @@ metadata:
 spec:
   ports:
     - name: http-web
-      port: 81
+      port: 80
       protocol: TCP
       targetPort: 3030
   selector:
