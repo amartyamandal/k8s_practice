@@ -9,8 +9,7 @@ spec:
       protocol: TCP
       targetPort: 3030
   selector:
-    app: proxy
-  type: hello-kubernetes-first
+    app: hello-kubernetes-first
   type: LoadBalancer
 ---
 apiVersion: apps/v1
