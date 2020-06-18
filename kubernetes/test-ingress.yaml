@@ -6,13 +6,13 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: sample1.vindpro.net
+  - host: sample1.vindpro.dev
     http:
       paths:
       - backend:
           serviceName: hello-kubernetes-first
           servicePort: 80
-  - host: sample2.vindpro.net
+  - host: sample2.vindpro.dev
     http:
       paths:
       - backend:
