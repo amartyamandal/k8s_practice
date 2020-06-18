@@ -1,14 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-kubernetes-first
+  name: proxy
 spec:
-  type: ClusterIP
   ports:
-  - port: 80
-    targetPort: 8080
+    - name: web
+      port: 80
+      protocol: TCP
+      targetPort: 3030
   selector:
-    app: hello-kubernetes-first
+    app: proxy
+  type: hello-kubernetes-first
 ---
 apiVersion: apps/v1
 kind: Deployment
