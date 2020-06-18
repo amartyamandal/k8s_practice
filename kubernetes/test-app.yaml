@@ -11,6 +11,7 @@ spec:
   selector:
     app: proxy
   type: hello-kubernetes-first
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
