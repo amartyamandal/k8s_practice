@@ -18,7 +18,6 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: app1-vs
-  namespace: istio-system
 spec:
   hosts:
   - "*"
@@ -30,6 +29,6 @@ spec:
         prefix: /app1
     route:
     - destination:
-        host: hello-kubernetes-first.default.svc.cluster.local
+        host: hello-kubernetes-first
         port:
           number: 8080
