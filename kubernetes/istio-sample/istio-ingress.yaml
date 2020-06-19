@@ -12,6 +12,7 @@ spec:
       protocol: HTTP
     hosts:
     - sample3.vindpro.dev
+    - sample4.vindpro.dev
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -26,3 +27,17 @@ spec:
   - route:
     - destination:
         host: hello-kubernetes-first
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: app2-vs
+spec:
+  hosts:
+  - sample4.vindpro.dev
+  gateways:
+  - app1-gateway
+  http:
+  - route:
+    - destination:
+        host: hello-kubernetes-second
