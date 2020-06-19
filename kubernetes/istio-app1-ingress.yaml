@@ -29,5 +29,3 @@ spec:
     route:
     - destination:
         host: hello-kubernetes-first
-        port:
-          number: 8080
