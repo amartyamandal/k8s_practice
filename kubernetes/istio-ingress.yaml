@@ -26,7 +26,8 @@ spec:
   - grafana-gateway
   http:
   - match:
-    - port: 30657
+    - uri:
+        prefix: /grafana
     route:
     - destination:
         host: grafana
