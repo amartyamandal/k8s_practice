@@ -23,9 +23,6 @@ spec:
   gateways:
   - app1-gateway
   http:
-  - match:
-    - uri:
-        prefix: /app1
-    route:
+  - route:
     - destination:
         host: hello-kubernetes-first
