@@ -1,20 +1,28 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: apps-vindpro-dev
+  name: apps-vindpro-dev-tls
   namespace: default
 spec:
   # Secret names are always required.
   secretName: apps-vindpro-dev-tls
   duration: 2160h # 90d
   renewBefore: 360h # 15d
+  commonName: sample3.vindpro.dev
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
   - sample3.vindpro.dev
   - sample4.vindpro.dev
   # Issuer references are always required.
+  acme:
+    config:
+    - http01:
+        ingressClass: istio
+      domains:
+      - sample3.vindpro.dev
+      - sample4.vindpro.dev
   issuerRef:
-    name: ca-issuer
+    name: letsencrypt-prod
     # We can reference ClusterIssuers by changing the kind here.
     # The default value is Issuer (i.e. a locally namespaced Issuer)
     kind: Issuer
