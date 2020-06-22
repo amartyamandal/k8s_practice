@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: app1-vs
+spec:
+  hosts:
+  - sample3.vindpro.dev
+  gateways:
+  - istio-system/app-gateway
+  http:
+  - route:
+    - destination:
+        host: hello-kubernetes-first
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: app2-vs
+spec:
+  hosts:
+  - sample4.vindpro.dev
+  gateways:
+  - istio-system/app-gateway
+  http:
+  - route:
+    - destination:
+        host: hello-kubernetes-second
