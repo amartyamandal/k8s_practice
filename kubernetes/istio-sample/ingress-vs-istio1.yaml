@@ -6,7 +6,7 @@ spec:
   hosts:
   - sample3.vindpro.dev
   gateways:
-  - istio-system/app-gateway
+  - app-gateway
   http:
   - route:
     - destination:
@@ -20,7 +20,7 @@ spec:
   hosts:
   - sample4.vindpro.dev
   gateways:
-  - istio-system/app-gateway
+  - app-gateway
   http:
   - route:
     - destination:
