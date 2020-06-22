@@ -12,7 +12,9 @@ spec:
       protocol: HTTPS
     tls:
       mode: SIMPLE
-      credentialName: apps-vindpro-dev-tls # This should match the Certifcate secretName
+      credentialName: apps-vindpro-dev-tls
+      privateKey: sds
+      serverCertificate: sds
     hosts:
     - sample3.vindpro.dev
     - sample4.vindpro.dev
