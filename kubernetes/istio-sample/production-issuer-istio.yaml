@@ -1,7 +1,8 @@
 apiVersion: cert-manager.io/v1alpha2
-kind: ClusterIssuer
+kind: Issuer
 metadata:
   name: letsencrypt-prod
+  namespace: istio-system
 spec:
   acme:
     # Email address used for ACME registration
