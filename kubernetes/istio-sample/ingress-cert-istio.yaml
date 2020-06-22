@@ -14,13 +14,6 @@ spec:
   - sample3.vindpro.dev
   - sample4.vindpro.dev
   # Issuer references are always required.
-  acme:
-    config:
-    - http01:
-        ingressClass: istio
-      domains:
-      - sample3.vindpro.dev
-      - sample4.vindpro.dev
   issuerRef:
     name: letsencrypt-prod
     
