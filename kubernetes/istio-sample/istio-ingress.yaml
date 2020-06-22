@@ -2,6 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: app-gateway
+  namespace: istio-system
 spec:
   selector:
     istio: ingressgateway
@@ -32,7 +33,7 @@ spec:
   hosts:
   - sample3.vindpro.dev
   gateways:
-  - app-gateway
+  - istio-system/app-gateway
   http:
   - route:
     - destination:
@@ -46,7 +47,7 @@ spec:
   hosts:
   - sample4.vindpro.dev
   gateways:
-  - app-gateway
+  - istio-system/app-gateway
   http:
   - route:
     - destination:
