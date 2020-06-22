@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
   name: apps-vindpro-dev-tls
-  namespace: default
+  namespace: istio-system
 spec:
   # Secret names are always required.
   secretName: apps-vindpro-dev-tls
@@ -23,6 +23,4 @@ spec:
       - sample4.vindpro.dev
   issuerRef:
     name: letsencrypt-prod
-    # We can reference ClusterIssuers by changing the kind here.
-    # The default value is Issuer (i.e. a locally namespaced Issuer)
-    kind: Issuer
+    
