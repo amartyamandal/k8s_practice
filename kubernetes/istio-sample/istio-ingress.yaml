@@ -7,6 +7,16 @@ spec:
     istio: ingressgateway
   servers:
   - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: apps-vindpro-dev-tls # This should match the Certifcate secretName
+    hosts:
+    - sample3.vindpro.dev
+    - sample4.vindpro.dev
+  - port:
       number: 80
       name: http
       protocol: HTTP
