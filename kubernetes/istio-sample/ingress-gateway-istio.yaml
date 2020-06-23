@@ -16,6 +16,8 @@ spec:
     hosts:
     - sample3.vindpro.dev
     - sample4.vindpro.dev
+    - sample3.vindpro.dev:443
+    - sample4.vindpro.dev:443
   - port:
       number: 80
       name: http
