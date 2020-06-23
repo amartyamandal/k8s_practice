@@ -4,7 +4,7 @@ metadata:
   name: apps-vindpro-dev-tls
 spec:
   secretName: apps-vindpro-dev-tls
-  commonName: samples.vindpro.dev
+  commonName: sample3.vindpro.dev
   dnsNames:
   - sample3.vindpro.dev
   - sample4.vindpro.dev
