@@ -10,6 +10,7 @@ spec:
   - hosts:
     - sample1.vindpro.dev
     - sample2.vindpro.dev
+    - proxy.vindpro.dev
     secretName: hello-kubernetes-tls
   rules:
   - host: sample1.vindpro.dev
