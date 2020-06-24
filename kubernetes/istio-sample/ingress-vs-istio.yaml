@@ -52,15 +52,16 @@ spec:
   http:
   - route:
     - destination:
-        host: kiali-external
+        host: ds-kiali.istio-system.svc.cluster.local
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: kiali-external
-  namespace: default
+  name: ds-kiali
+  namespace: istio-system
 spec:
-  type: ExternalName
-  externalName: kiali.istio-system.cluster.local
   ports:
-  - port: 20001
+  - name: http 
+    port: 20001
+  selector:
+    app: kiali
