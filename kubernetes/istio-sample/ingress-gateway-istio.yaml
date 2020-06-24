@@ -16,6 +16,7 @@ spec:
     hosts:
     - sample3.vindpro.dev
     - sample4.vindpro.dev
+    - proxy-istio.vindpro.dev
   - port:
       number: 80
       name: http
