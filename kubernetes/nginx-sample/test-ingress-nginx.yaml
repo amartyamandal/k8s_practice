@@ -24,3 +24,9 @@ spec:
       - backend:
           serviceName: hello-kubernetes-second
           servicePort: 80
+  - host: proxy.vindpro.dev
+    http:
+      paths:
+      - backend:
+          serviceName: proxy
+          servicePort: 80
