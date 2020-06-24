@@ -52,16 +52,4 @@ spec:
   http:
   - route:
     - destination:
-        host: ds-kiali.istio-system.svc.cluster.local
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: ds-kiali
-  namespace: istio-system
-spec:
-  ports:
-  - name: http 
-    port: 20001
-  selector:
-    app: kiali
+        host: kiali.istio-system.svc.cluster.local
