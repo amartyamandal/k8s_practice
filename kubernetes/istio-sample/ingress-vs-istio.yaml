@@ -39,3 +39,28 @@ spec:
   - route:
     - destination:
         host: proxy
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: kiali-vs
+spec:
+  hosts:
+  - kiali.vindpro.dev
+  gateways:
+  - app-gateway
+  http:
+  - route:
+    - destination:
+        host: kiali-external
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: kiali-external
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: kiali.istio-system.cluster.local
+  ports:
+  - port: 20001
