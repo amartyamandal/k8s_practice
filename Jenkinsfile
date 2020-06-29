@@ -1,8 +1,11 @@
 
 pipeline {
     agent any
-    def appsimpleserver
-    def appsimpleproxy
+    environment {
+     def appsimpleserver
+     def appsimpleproxy
+    }
+    
     stages {    
             
             stage('Clone repository') {
