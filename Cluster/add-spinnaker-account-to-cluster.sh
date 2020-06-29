@@ -1,3 +1,7 @@
+doctl kubernetes cluster kubeconfig save dgo-cluster-07
+
+kubectl config use-context do-tor1-dgo-cluster-07
+
 CONTEXT=$(kubectl config current-context)
 
 kubectl apply --context $CONTEXT \
