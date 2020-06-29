@@ -6,4 +6,4 @@ export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -
 export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].port}')
 export TCP_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="tcp")].port}')
 
-echo $INGRESS_HOST > lb-ip.txt
+echo $INGRESS_HOST > ~/lb-ip.txt
