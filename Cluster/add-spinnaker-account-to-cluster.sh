@@ -1,4 +1,3 @@
-kubectl config use-context <context-name>
 CONTEXT=$(kubectl config current-context)
 
 kubectl apply --context $CONTEXT \
@@ -20,6 +19,6 @@ hal config provider kubernetes enable
 
 CONTEXT=$(kubectl config current-context)
 
-hal config provider kubernetes account add <k8s-account-name> \
+hal config provider kubernetes account add my-k8s-v2-account5 \
     --provider-version v2 \
     --context $CONTEXT
