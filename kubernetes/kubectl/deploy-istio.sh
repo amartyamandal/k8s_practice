@@ -1,14 +1,9 @@
-if [ -d "istio-1.6.3" ]; then
-    cd istio-1.6.3
-    export PATH=$PWD/bin:$PATH
-else
-   curl -L https://istio.io/downloadIstio | sh -
-   cd istio-1.6.3
-   export PATH=$PWD/bin:$PATH
-fi
+curl -L https://istio.io/downloadIstio | sh -
+cd istio-1.6.3
+export PATH=$PWD/bin:$PATH
 kubectl create namespace istio-system
 istioctl install --set profile=demo
-kubectl label default istio-system istio-injection=enabled
+kubectl label namespace default istio-injection=enabled
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
 export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].port}')
