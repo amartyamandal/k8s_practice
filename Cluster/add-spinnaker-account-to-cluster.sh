@@ -1,4 +1,4 @@
-kubectl config use-context <context-name>
+kubectl config use-context do-tor1-dgo-cluster-04
 CONTEXT=$(kubectl config current-context)
 
 kubectl apply --context $CONTEXT \
