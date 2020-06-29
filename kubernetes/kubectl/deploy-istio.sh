@@ -1,3 +1,11 @@
+if [ -d "istio-1.6.3" ]; then
+    cd istio-1.6.3
+    export PATH=$PWD/bin:$PATH
+else
+   curl -L https://istio.io/downloadIstio | sh -
+   cd istio-1.6.3
+   export PATH=$PWD/bin:$PATH
+fi
 kubectl create namespace istio-system
 istioctl install --set profile=demo
 kubectl label default istio-system istio-injection=enabled
