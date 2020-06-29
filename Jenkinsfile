@@ -43,4 +43,9 @@ node {
         
         sh 'yes | docker system prune -a'
     }
+    post { 
+        always { 
+            cleanWs()
+        }
+    }
 }
