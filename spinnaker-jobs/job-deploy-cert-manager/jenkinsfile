@@ -1,0 +1,27 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('download artifacts') {
+         steps {
+            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/kubernetes/kubectl/kubectl-cert-manager.sh'
+         }
+      }
+      stage('deploy cert manager') {
+         steps {
+             sh 'chmod +x ./kubectl-cert-manager.sh'
+             sh './kubectl-cert-manager.sh'
+         }
+      }
+      stage('remove artifact') {
+         steps {
+             sh 'rm kubectl-cert-manager.sh'
+         }
+      }
+   }
+   post { 
+      always { 
+         cleanWs()
+      }
+   }
+}

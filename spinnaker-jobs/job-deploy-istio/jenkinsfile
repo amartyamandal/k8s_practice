@@ -1,0 +1,40 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('download artifacts') {
+         steps {
+            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/kubernetes/kubectl/deploy-istio.sh'
+            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/kubernetes/kubectl/istio-initialize.sh'
+         }
+      }
+      stage('deploy istio') {
+         steps {
+             sh 'chmod +x ./deploy-istio.sh'
+             sh './deploy-istio.sh'
+         }
+      }
+      stage('wait few seconds before LB is up') {
+         steps {
+             sleep(time:150,unit:"SECONDS")
+         }
+      }
+      stage('initialize istio') {
+         steps {
+             sh 'chmod +x ./istio-initialize.sh'
+             sh './istio-initialize.sh'
+         }
+      }
+      stage('remove artifact') {
+         steps {
+             sh 'rm deploy-istio.sh istio-initialize.sh'
+             sh 'echo $INGRESS_HOST'
+         }
+      }
+   }
+   post { 
+      always { 
+         cleanWs()
+      }
+   }
+}

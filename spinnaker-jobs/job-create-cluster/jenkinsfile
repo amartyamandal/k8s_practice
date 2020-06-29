@@ -1,0 +1,27 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('download artifacts') {
+         steps {
+            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/Cluster/create-dgo-k8s-cluster.sh'
+         }
+      }
+      stage('create cluster in dgo') {
+         steps {
+             sh 'chmod +x ./create-dgo-k8s-cluster.sh'
+             sh './create-dgo-k8s-cluster.sh'
+         }
+      }
+      stage('remove artifact') {
+         steps {
+             sh 'rm create-dgo-k8s-cluster.sh'
+         }
+      }
+   }
+   post { 
+      always { 
+         cleanWs()
+      }
+   }
+}
