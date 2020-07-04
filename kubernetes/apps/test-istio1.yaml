@@ -17,7 +17,7 @@ spec:
         - env:
             - name: PROXYURL
               value: http://webserver
-          image: amartyamandal/simpleproxy:latest
+          image: amartyamandal/simpleproxy:57
           imagePullPolicy: IfNotPresent
           name: proxy
           ports:
@@ -58,7 +58,7 @@ spec:
         - env:
             - name: SERVERCONTNET
               value: WebServer V1
-          image: amartyamandal/simpleserver:latest
+          image: amartyamandal/simpleserver:57
           imagePullPolicy: IfNotPresent
           name: simpleserver
           ports:
@@ -99,7 +99,7 @@ spec:
         - env:
             - name: SERVERCONTNET
               value: WebServer V2
-          image: amartyamandal/simpleserver:latest
+          image: amartyamandal/simpleserver:57
           imagePullPolicy: IfNotPresent
           name: simpleserver
           ports:

@@ -11,9 +11,9 @@ const requestHandler = (request, response) => {
     requestService(proxyUrl + (path == "/" ? "" : path), (err, res, body) => {
         const duration = new Date().getTime() - start;
         if (err) {
-            response.end(err.toString() + " - Took " + duration + " milliseconds, printout from management cluster");
+            response.end(err.toString() + " - Took " + duration + " milliseconds, printout from remote cluster");
         } else {
-            response.end("Proxying value: " + body + " - Took " + duration + " milliseconds, printout from management cluster");
+            response.end("Proxying value: " + body + " - Took " + duration + " milliseconds, printout from remote cluster");
         }
     });
 }
