@@ -1,6 +1,6 @@
-doctl kubernetes cluster kubeconfig save dgo-cluster-10
+doctl kubernetes cluster kubeconfig save dgo-cluster-11
 
-kubectl config use-context do-tor1-dgo-cluster-10
+kubectl config use-context do-tor1-dgo-cluster-11
 
 CONTEXT=$(kubectl config current-context)
 
@@ -23,6 +23,6 @@ hal config provider kubernetes enable
 
 CONTEXT=$(kubectl config current-context)
 
-hal config provider kubernetes account add my-k8s-v2-account-10 \
+hal config provider kubernetes account add my-k8s-v2-account-11 \
     --provider-version v2 \
     --context $CONTEXT

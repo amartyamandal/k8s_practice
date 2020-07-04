@@ -3,7 +3,7 @@ const http = require('http');
 const url = require('url');
 const requestService = require('request');
 const port = 3030;
-const proxyUrl = process.env.PROXYURL || "https://raw.githubusercontent.com/mcasperson/NodejsProxy/master/helloworld.txt";
+const proxyUrl = process.env.PROXYURL || "https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/NodejsProxy-master/helloworld.txt";
 
 const requestHandler = (request, response) => {
     const path = url.parse(request.url).pathname;
@@ -11,9 +11,9 @@ const requestHandler = (request, response) => {
     requestService(proxyUrl + (path == "/" ? "" : path), (err, res, body) => {
         const duration = new Date().getTime() - start;
         if (err) {
-            response.end(err.toString() + " - Took " + duration + " milliseconds");
+            response.end(err.toString() + " - Took " + duration + " milliseconds, printout from managment cluster");
         } else {
-            response.end("Proxying value: " + body + " - Took " + duration + " milliseconds");
+            response.end("Proxying value: " + body + " - Took " + duration + " milliseconds, printout from managment cluster");
         }
     });
 }

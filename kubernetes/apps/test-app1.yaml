@@ -31,7 +31,7 @@ spec:
         - containerPort: 8080
         env:
         - name: MESSAGE
-          value: nginx said Hello from the first deployment!
+          value: istio said Hello from the first deployment!
 ---
 apiVersion: v1
 kind: Service
@@ -66,4 +66,4 @@ spec:
         - containerPort: 8080
         env:
         - name: MESSAGE
-          value: nginx said Hello from the second deployment!
+          value: istio said Hello from the second deployment!
