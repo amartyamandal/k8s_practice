@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: apps-vindpro-dev-tls
+  namespace: istio-system
+spec:
+  secretName: apps-vindpro-dev-tls
+  commonName: mesh-manager.vindpro.dev
+  dnsNames:
+  - mesh-manager.vindpro.dev
+  - kiali-manager.vindpro.dev
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+    
