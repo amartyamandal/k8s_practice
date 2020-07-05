@@ -4,18 +4,18 @@ pipeline {
    stages {
       stage('download artifacts') {
          steps {
-            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/kubernetes/kubectl/add-cluster-to-meshub.sh'
+            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/cluster/meshub/add-new-cluster-to-mesh.sh'
          }
       }
-      stage('register new cluster') {
+      stage('create and register new cluster') {
          steps {
-             sh 'chmod +x ./add-cluster-to-meshub.sh'
-             sh './add-cluster-to-meshub.sh'
+             sh 'chmod +x ./add-new-cluster-to-mesh.sh'
+             sh './add-new-cluster-to-mesh.sh'
          }
       }
       stage('remove artifact') {
          steps {
-             sh 'rm add-cluster-to-meshub.sh'
+             sh 'rm add-new-cluster-to-mesh.sh'
          }
       }
    }
