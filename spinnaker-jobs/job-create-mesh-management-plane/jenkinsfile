@@ -4,7 +4,7 @@ pipeline {
    stages {
       stage('download artifacts') {
          steps {
-            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/cluster/meshub/add-managment-plane.sh'
+            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/Cluster/meshub/add-managment-plane.sh'
          }
       }
       stage('create and prepare mesh managment plane') {
