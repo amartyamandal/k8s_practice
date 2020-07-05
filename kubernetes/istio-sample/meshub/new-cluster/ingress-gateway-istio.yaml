@@ -14,11 +14,11 @@ spec:
       mode: SIMPLE
       credentialName: apps-vindpro-dev-tls
     hosts:
-    - proxy-mesh.vindpro.dev
-    - kiali.vindpro.dev
+    - mesh-cluster.vindpro.dev
+    - kiali-cluster.vindpro.dev
   - port:
       number: 80
       name: http
       protocol: HTTP
     hosts:
-    - proxy-mesh.vindpro.dev
+    - mesh-cluster.vindpro.dev
