@@ -10,7 +10,7 @@ pipeline {
       stage('create and prepare mesh managment plane') {
          steps {
              sh 'chmod +x ./add-managment-plane.sh'
-             sh './add-cluster-to-meshub.sh'
+             sh './add-managment-plane.sh'
          }
       }
       stage('remove artifact') {
