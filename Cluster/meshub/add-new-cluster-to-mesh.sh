@@ -5,7 +5,7 @@ curl -sL https://run.solo.io/meshctl/install | sh
 export PATH=$HOME/.service-mesh-hub/bin:$PATH
 meshctl cluster register --remote-cluster-name dgo-cluster-12 --remote-context do-tor1-dgo-cluster-12
 # note here that you could replace "istio1.5" with "istio1.6" to install that version
-meshctl mesh install istio1.6 --context do-tor1-dgo-cluster-12 --operator-spec=- <<EOF
+meshctl mesh install istio1.5 --context do-tor1-dgo-cluster-12 --operator-spec=- <<EOF
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 metadata:
