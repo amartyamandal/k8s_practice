@@ -1,0 +1,27 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('download artifacts') {
+         steps {
+            sh 'wget https://raw.githubusercontent.com/amartyamandal/k8s_practice/master/cluster/meshub/add-managment-plane.sh'
+         }
+      }
+      stage('create and prepare mesh managment plane') {
+         steps {
+             sh 'chmod +x ./add-managment-plane.sh'
+             sh './add-cluster-to-meshub.sh'
+         }
+      }
+      stage('remove artifact') {
+         steps {
+             sh 'rm add-managment-plane.sh'
+         }
+      }
+   }
+   post { 
+      always { 
+         cleanWs()
+      }
+   }
+}

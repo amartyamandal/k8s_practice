@@ -23,6 +23,6 @@ hal config provider kubernetes enable
 
 CONTEXT=$(kubectl config current-context)
 
-hal config provider kubernetes account add my-k8s-v2-account-11 \
+hal config provider kubernetes account add my-k8s-account-managment-plane \
     --provider-version v2 \
     --context $CONTEXT
