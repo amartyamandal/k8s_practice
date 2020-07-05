@@ -1,6 +1,9 @@
 doctl k8s cluster create dgo-management-plane --region tor1 --version 1.18.3-do.0 --tag demo --size s-1vcpu-2gb --count 3
 doctl kubernetes cluster kubeconfig save dgo-management-plane
 kubectl config use-context do-tor1-dgo-management-plane
+curl -L https://istio.io/downloadIstio | sh -
+cd istio-1.6.3
+export PATH=$PWD/bin:$PATH
 curl -sL https://run.solo.io/meshctl/install | sh
 export PATH=$HOME/.service-mesh-hub/bin:$PATH
 meshctl install --register --context do-tor1-dgo-management-plane
