@@ -54,7 +54,7 @@ spec:
     - destination:
         host: artifactory-artifactory
         port:
-          number: 8082
+          number: 8081
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
