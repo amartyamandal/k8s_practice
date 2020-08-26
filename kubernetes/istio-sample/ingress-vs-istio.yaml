@@ -53,3 +53,5 @@ spec:
   - route:
     - destination:
         host: kiali.istio-system.svc.cluster.local
+        port:
+          number: 9090
