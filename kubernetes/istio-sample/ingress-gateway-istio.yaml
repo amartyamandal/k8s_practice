@@ -18,6 +18,7 @@ spec:
     - sample4.vindpro.dev
     - proxy-istio.vindpro.dev
     - kiali.vindpro.dev
+    - artifactory.vindpro.dev
   - port:
       number: 80
       name: http
