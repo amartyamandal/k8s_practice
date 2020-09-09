@@ -11,7 +11,6 @@ spec:
   - sample4.vindpro.dev
   - proxy-istio.vindpro.dev
   - kiali.vindpro.dev
-  - artifactory.vindpro.dev
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt-prod
