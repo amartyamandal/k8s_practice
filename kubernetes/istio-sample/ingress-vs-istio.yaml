@@ -43,22 +43,6 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: artifactory-vs
-spec:
-  hosts:
-  - artifactory.vindpro.dev
-  gateways:
-  - app-gateway
-  http:
-  - route:
-    - destination:
-        host: artifactory-artifactory
-        port:
-          number: 8081
----
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
   name: kiali-vs
 spec:
   hosts:
